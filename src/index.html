@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>radio</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background: #353535;
+        margin: 0;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      #toggleButton {
+        margin: 0 auto;
+        padding: 10px 20px;
+        background: #ff5757;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        user-select: none;
+      }
+
+      #toggleButton:hover {
+        background: #ff9999;
+      }
+
+      #trackTitle {
+        color: #fff;
+        margin-top: 20px;
+        text-align: center;
+        transition: color 0.5s ease-out;
+      }
+
+      #trackTitle a {
+        color: #ff5757;
+        text-decoration: none;
+      }
+
+      #trackTitle a:hover {
+        text-decoration: underline;
+      }
+
+      .visualizer {
+        display: flex;
+        align-items: flex-end;
+        width: 90%;
+        max-width: 600px;
+      }
+
+      .bar {
+        height: 100px;
+        flex: 1;
+        margin: 0 1px;
+        background: linear-gradient(180deg, #ff5757, #ff9999);
+        animation: bounce 1s infinite;
+        transition:
+          transform 0.5s ease-out,
+          opacity 0.5s ease-out;
+        animation-play-state: running;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: scaleY(0.3);
+        }
+        50% {
+          transform: scaleY(1);
+        }
+      }
+
+      /* Медиа-запросы для адаптации на мобильных устройствах */
+      @media (max-width: 768px) {
+        .bar {
+          margin: 0 0.5px;
+        }
+
+        #toggleButton {
+          font-size: 14px;
+          padding: 8px 16px;
+        }
+
+        #trackTitle {
+          font-size: 18px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .bar {
+          margin: 0 0.2px;
+        }
+
+        #toggleButton {
+          font-size: 12px;
+          padding: 6px 12px;
+        }
+
+        #trackTitle {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button id="toggleButton">Пауза</button>
+      <h1 id="trackTitle">
+        <a href="#" id="trackLink">Youtube</a>
+      </h1>
+      <div class="visualizer">
+        <!-- Бары будут сгенерированы с помощью TypeScript -->
+      </div>
+    </div>
+  </body>
+  <script></script>
+</html>
